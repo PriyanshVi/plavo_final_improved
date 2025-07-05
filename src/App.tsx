@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Header, HeroCarousel } from './components/Hero'; // Named exports
+import Services from './components/Services';             // Default export
+import About from './components/About';                   // Default export
+import Gallery from './components/Gallery';               // Default export
+import Contact from './components/Contact';               // Default export
+import Footer from './components/Footer';                 // Default export
+import FloatingIcons from './components/FloatingIcons';
 
 const appAnimations = `
 @keyframes appFadeIn {
@@ -30,17 +30,14 @@ function App() {
         overflowX: 'hidden',
       }}
     >
-      {/* Inject app fade-in animation keyframes */}
       <style>{appAnimations}</style>
 
-      {/* Wrap Header to preserve original layout */}
       <div style={{ width: '100%', position: 'sticky', top: 0, zIndex: 100 }}>
         <Header />
       </div>
 
-      {/* Spacing between sections */}
       <div style={{ height: 16 }} />
-      <Hero />
+      <HeroCarousel />
       <div style={{ height: 32 }} />
       <Services />
       <div style={{ height: 32 }} />
@@ -51,6 +48,7 @@ function App() {
       <Contact />
       <div style={{ height: 32 }} />
       <Footer />
+      <FloatingIcons />
     </div>
   );
 }
