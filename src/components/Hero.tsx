@@ -155,15 +155,14 @@ const HeroCarousel: React.FC = () => {
   src={images[current]}
   alt={`Hero visual ${current + 1}`}
   style={{
-    width: '100vw',
-    height: 'auto',
-    objectFit: 'contain',
+    width: '100%',
+    height: '100vh', // taller area to reduce cropping
+    objectFit: 'cover', // this still may crop, but less if image fits well
+    objectPosition: 'top', // ✅ show the top part more clearly
     display: 'block',
-    backgroundColor: '#fff', // optional fallback
     transition: 'opacity 0.4s',
   }}
 />
-
 
       <button
         onClick={goToPrev}
