@@ -115,10 +115,11 @@ const headerStyles = `
 `;
 
 const images = [
-  '/applying_perfume.png',
-  '/endorsing_perfume.png',
-  '/cleaning_product.png',
   '/personal_care.jpg',
+  '/applying_perfume.png',
+  '/woman_with_candle.jpg',
+  '/cleaning_product.png',
+  
 ];
 
 const heroCarouselStyles = `
@@ -139,10 +140,10 @@ const HeroCarousel: React.FC = () => {
     <section
       style={{
         position: 'relative',
-        maxWidth: 700,
-        margin: '2.5rem auto 0 auto',
-        borderRadius: 32,
-        boxShadow: '0 8px 32px rgba(29,191,163,0.13)',
+        width: '100%',
+        margin: '0',
+        borderRadius: 0,
+        boxShadow: 'none',
         overflow: 'hidden',
         background: 'linear-gradient(135deg, #e0f7fa 0%, #f8fffc 100%)',
         textAlign: 'center',
@@ -151,17 +152,19 @@ const HeroCarousel: React.FC = () => {
     >
       <style>{heroCarouselStyles}</style>
       <img
-        src={images[current]}
-        alt={`Hero visual ${current + 1}`}
-        style={{
-          width: '100%',
-          height: 380,
-          objectFit: 'cover',
-          display: 'block',
-          borderRadius: 32,
-          transition: 'opacity 0.4s',
-        }}
-      />
+  src={images[current]}
+  alt={`Hero visual ${current + 1}`}
+  style={{
+    width: '100vw',
+    height: 'auto',
+    objectFit: 'contain',
+    display: 'block',
+    backgroundColor: '#fff', // optional fallback
+    transition: 'opacity 0.4s',
+  }}
+/>
+
+
       <button
         onClick={goToPrev}
         style={{
@@ -229,11 +232,7 @@ const Header: React.FC = () => {
       <style>{headerStyles}</style>
       <header className="header">
         <div className="logo">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="logo-img"
-          />
+          <img src="/logo.png" alt="Logo" className="logo-img" />
           <span className="logo-text">Plavo India Pvt Ltd</span>
         </div>
         <nav className="nav">
@@ -245,9 +244,7 @@ const Header: React.FC = () => {
         </nav>
         <div className="contact-info">
           <a className="card-btn" href="tel:8076727357">
-            <span style={{ display: 'inline', verticalAlign: 'middle' }}>
-              <FiPhone size={18} color="#1dbfa3" />
-            </span>
+            <FiPhone size={18} color="#1dbfa3" />
             Call
           </a>
           <a
@@ -256,9 +253,7 @@ const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span style={{ display: 'inline', verticalAlign: 'middle' }}>
-              <FaWhatsapp size={18} color="#25d366" />
-            </span>
+            <FaWhatsapp size={18} color="#25d366" />
             WhatsApp
           </a>
         </div>
@@ -268,4 +263,3 @@ const Header: React.FC = () => {
 };
 
 export { Header, HeroCarousel };
-
