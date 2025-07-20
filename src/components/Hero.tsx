@@ -115,11 +115,10 @@ const headerStyles = `
 `;
 
 const images = [
-  '/personal_care.jpg',
+  '/applying_cream.png',
   '/applying_perfume.png',
-  '/woman_with_candle.jpg',
+  '/woman_with_candle.jpeg',
   '/cleaning_product.png',
-  
 ];
 
 const heroCarouselStyles = `
@@ -152,18 +151,17 @@ const HeroCarousel: React.FC = () => {
     >
       <style>{heroCarouselStyles}</style>
       <img
-  src={images[current]}
-  alt={`Hero visual ${current + 1}`}
-  style={{
-    width: '100%',
-    height: '100vh', // taller area to reduce cropping
-    objectFit: 'cover', // this still may crop, but less if image fits well
-    objectPosition: 'top', // ✅ show the top part more clearly
-    display: 'block',
-    transition: 'opacity 0.4s',
-  }}
-/>
-
+        src={images[current]}
+        alt={`Hero visual ${current + 1}`}
+        style={{
+          width: '100vw',
+          height: 'auto',
+          objectFit: 'contain',
+          display: 'block',
+          backgroundColor: '#fff',
+          transition: 'opacity 0.4s',
+        }}
+      />
       <button
         onClick={goToPrev}
         style={{
@@ -231,7 +229,7 @@ const Header: React.FC = () => {
       <style>{headerStyles}</style>
       <header className="header">
         <div className="logo">
-          <img src="/logo.png" alt="Logo" className="logo-img" />
+          <img src="/logo_plavo.png" alt="Logo" className="logo-img" />
           <span className="logo-text">Plavo India Pvt Ltd</span>
         </div>
         <nav className="nav">

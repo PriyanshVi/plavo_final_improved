@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaLeaf } from 'react-icons/fa';
+// 1. Import your logo file
+// import yourLogo from '.public/logo.png'; // <-- UPDATE THIS PATH
 
 const aboutAnimations = `
 @keyframes fadeInUp {
@@ -30,7 +32,6 @@ const About: React.FC = () => (
       backdropFilter: 'blur(4px)',
     }}
   >
-    {/* Inject animation keyframes directly */}
     <style>{aboutAnimations}</style>
 
     {/* Decorative floating leaf icon */}
@@ -50,6 +51,19 @@ const About: React.FC = () => (
       <FaLeaf />
     </span>
 
+    {/* 2. Add the logo image here */}
+    <img
+      src="/logo_plavo.png"
+      alt="Plavo India Logo"
+      style={{
+        display: 'block', // Add this
+        margin: '0 auto 1rem auto', // Update this to handle centering
+        height: 100,
+        animation: 'fadeInUp 1.1s 0s cubic-bezier(0.23, 1, 0.32, 1) both',
+      }}
+    />
+
+    {/* 2. UPDATE THE HEADING'S STYLE */}
     <h2
       style={{
         fontSize: '2.5rem',
@@ -58,7 +72,7 @@ const About: React.FC = () => (
         marginBottom: '1.3rem',
         letterSpacing: '1.5px',
         position: 'relative',
-        display: 'inline-block',
+        display: 'block', // CHANGE 'inline-block' to 'block'
         zIndex: 2,
         textShadow: '0 4px 16px rgba(29,191,163,0.10)',
         animation: 'fadeInUp 1.2s 0.1s cubic-bezier(0.23, 1, 0.32, 1) both',

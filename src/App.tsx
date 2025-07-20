@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, HeroCarousel } from './components/Hero'; // Named exports
+import Header from './components/Header';              // Correctly import from Header.tsx (default export)
+import { HeroCarousel } from './components/Hero';      // Only import HeroCarousel from Hero.tsx
 import Services from './components/Services';             // Default export
 import About from './components/About';                   // Default export
 import Gallery from './components/Gallery';               // Default export
@@ -36,7 +37,7 @@ function App() {
         <Header />
       </div>
 
-      <div style={{ height: 16 }} />
+      <div style={{ height: 32 }} />
       <HeroCarousel />
       <div style={{ height: 32 }} />
       <Services />
