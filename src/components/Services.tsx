@@ -33,7 +33,7 @@ const serviceImages: Record<ServiceName, string> = {
 };
 
 // Define the path for the default background image
-const defaultBackgroundImageUrl = '/logo_plavo.png';
+const defaultBackgroundImageUrl = '/logo_p.jpg';
 
 const fadeInUpKeyframes = `
 @keyframes fadeInUp {
