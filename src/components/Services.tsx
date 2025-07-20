@@ -6,25 +6,34 @@ const services = [
   'Personal Care',
   'Household Care',
   'Soap',
-  'Cream & Cosmetics',
   'Air Fragrances',
   'Essential Oil',
-  'Hair Care',
+  'Fixed oils',
+  'Pharmaceuticals',
+  'Extracts',
+  'Cosmetic and chemicals',
+  'Nutritional flavours',
 ] as const;
 
 type ServiceName = typeof services[number];
 
-// Map service names to image filenames
+// --- CORRECTED: Image formats are now restored to your original version ---
 const serviceImages: Record<ServiceName, string> = {
   'Fine Fragrances': '/fine-fragrances.jpg',
   'Personal Care': '/personal-care.jpg',
-  'Household Care': '/household-care.png',
-  'Soap': '/soap.webp',
-  'Cream & Cosmetics': '/cream-cosmetics.jpg',
+  'Household Care': '/household-care.png', // Corrected back to .png
+  'Soap': '/soap.webp', // Corrected back to .webp
   'Air Fragrances': '/air-fragrances.jpg',
   'Essential Oil': '/essential-oil.jpg',
-  'Hair Care': '/hair-care.jpg',
+  'Fixed oils': '/fixed-oils.jpeg',
+  'Pharmaceuticals': '/pharmaceuticals.avif',
+  'Extracts': '/extracts.webp',
+  'Cosmetic and chemicals': '/cosmetic-and-chemicals.jpg',
+  'Nutritional flavours': '/nutritional-flavours.jpg',
 };
+
+// Define the path for the default background image
+const defaultBackgroundImageUrl = '/logo_plavo.png';
 
 const fadeInUpKeyframes = `
 @keyframes fadeInUp {
@@ -38,7 +47,7 @@ const Services: React.FC = () => {
 
   const backgroundImage = selectedService
     ? `linear-gradient(rgba(29,191,163,0.13), rgba(255,255,255,0.85)), url(${serviceImages[selectedService]})`
-    : 'linear-gradient(135deg, #e0f7fa 0%, #f8fffc 100%)';
+    : `linear-gradient(rgba(29, 191, 163, 0.13), rgba(255, 255, 255, 0.85)), url(${defaultBackgroundImageUrl})`;
 
   return (
     <section
@@ -179,4 +188,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services 
+export default Services;
