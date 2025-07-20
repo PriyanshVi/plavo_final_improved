@@ -1,7 +1,5 @@
 import React from 'react';
 import { FaLeaf } from 'react-icons/fa';
-// 1. Import your logo file
-// import yourLogo from '.public/logo.png'; // <-- UPDATE THIS PATH
 
 const aboutAnimations = `
 @keyframes fadeInUp {
@@ -34,7 +32,6 @@ const About: React.FC = () => (
   >
     <style>{aboutAnimations}</style>
 
-    {/* Decorative floating leaf icon */}
     <span
       style={{
         position: 'absolute',
@@ -51,19 +48,17 @@ const About: React.FC = () => (
       <FaLeaf />
     </span>
 
-    {/* 2. Add the logo image here */}
     <img
       src="/logo_plavo.png"
       alt="Plavo India Logo"
       style={{
-        display: 'block', // Add this
-        margin: '0 auto 1rem auto', // Update this to handle centering
+        display: 'block',
+        margin: '0 auto 1rem auto',
         height: 100,
         animation: 'fadeInUp 1.1s 0s cubic-bezier(0.23, 1, 0.32, 1) both',
       }}
     />
 
-    {/* 2. UPDATE THE HEADING'S STYLE */}
     <h2
       style={{
         fontSize: '2.5rem',
@@ -72,7 +67,7 @@ const About: React.FC = () => (
         marginBottom: '1.3rem',
         letterSpacing: '1.5px',
         position: 'relative',
-        display: 'block', // CHANGE 'inline-block' to 'block'
+        display: 'block',
         zIndex: 2,
         textShadow: '0 4px 16px rgba(29,191,163,0.10)',
         animation: 'fadeInUp 1.2s 0.1s cubic-bezier(0.23, 1, 0.32, 1) both',
@@ -119,7 +114,31 @@ const About: React.FC = () => (
       Established with a vision to become a pioneer in manufacturing eco-friendly aroma ingredients, we have grown to serve clients across the globe. Our expertise includes developing and manufacturing fragrances, aroma chemicals, and essential oils for a wide range of applications.
     </p>
 
-    {/* Subtle animated gradient accent at the bottom */}
+    {/* --- NEW CODE ADDED HERE --- */}
+    <a
+      href="/plavo-brochure.pdf" // Make sure your PDF is named this in the /public folder
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'inline-block',
+        marginTop: '1.8rem',
+        padding: '0.8rem 1.8rem',
+        background: 'linear-gradient(90deg, #1dbfa3 60%, #1de9b6 100%)',
+        color: '#ffffff',
+        fontWeight: 700,
+        textDecoration: 'none',
+        borderRadius: 50,
+        boxShadow: '0 4px 20px rgba(29, 191, 163, 0.25)',
+        transition: 'transform 0.2s, box-shadow 0.2s',
+        animation: 'fadeInUp 1.4s 0.3s cubic-bezier(0.23, 1, 0.32, 1) both',
+        zIndex: 2,
+        position: 'relative',
+      }}
+    >
+      Download Our Brochure
+    </a>
+    {/* --- END OF NEW CODE --- */}
+
     <div
       style={{
         position: 'absolute',
